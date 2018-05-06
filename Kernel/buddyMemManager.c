@@ -61,8 +61,8 @@ void* buddyAllocate(uint64_t amount){
 
     lockMutex(mutex);
 
-    uint64_t pages=roundUpPower2( amount/block );
-    pages=pages==0?1:pages;
+    uint64_t pages = roundUpPower2( amount/block );
+    pages = pages == 0 ? 1 : pages;
     void* ans = addNblocks(pages);
 
     unlockMutex(mutex);
